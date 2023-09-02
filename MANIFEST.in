@@ -1,0 +1,19 @@
+# Root directory
+## Include
+include README.md
+include CHANGELOG.md
+include requirements.txt
+recursive-include src *.md *.py
+
+## Exclude
+exclude requirements-ci-no-deps.txt
+exclude requirements-ci.txt
+exclude *.properties
+exclude constraints*
+exclude CONTRIBUTING.md
+exclude pylintrc
+exclude pytest.ini
+exclude pylint-report.txt
+exclude conftest.py
+exclude tox.ini
+recursive-exclude tests *.py
