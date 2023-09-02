@@ -1,4 +1,4 @@
 from setuptools import setup
 
-## See setup.cfg file
+# See setup.cfg file
 setup()
