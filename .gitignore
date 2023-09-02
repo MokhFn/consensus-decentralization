@@ -1,5 +1,7 @@
 /.idea/
 /build/
+/dist/
+/coverage/
 .tox
 *.egg-info
 *.swp
