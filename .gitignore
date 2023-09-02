@@ -1,4 +1,5 @@
 /.idea/
+/build/
 .tox
 *.egg-info
 *.swp
