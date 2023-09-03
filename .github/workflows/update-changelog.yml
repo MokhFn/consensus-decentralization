@@ -24,13 +24,12 @@ jobs:
       - name: Get branch name (pull request)
         if: github.event_name == 'pull_request'
         run: |
-          echo "BRANCH_NAME=$(echo ${GITHUB_HEAD_REF})" >> $GITHUB_ENV
-          branch="$(echo $BRANCH_NAME | cut -d/ -f3-)"
-          echo $branch
+          echo "BRANCH_NAME=$(echo origin/${GITHUB_HEAD_REF})" >> $GITHUB_ENV
 
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          ref: $BRANCH_NAME
       - name: Set up Python 3.8
         uses: actions/setup-python@v4
         with:
