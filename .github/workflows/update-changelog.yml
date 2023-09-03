@@ -39,7 +39,7 @@ jobs:
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install tox tox-gh-actions
       - run: git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
-      - run: ${{ secrets.PYPI_TOKEN }} > $HOME/.pypirc
+      - run: echo ${{ secrets.PYPI_TOKEN }} > $HOME/.pypirc
       - name: Release
         run: |
           ls -lart $HOME
