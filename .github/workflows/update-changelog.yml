@@ -18,12 +18,11 @@ jobs:
     steps:
 
       - name: Get branch name (merge)
-          if: github.event_name != 'pull_request'
-          run: export BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | tr / -)
+        if: github.event_name != 'pull_request'
+        run: export BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | tr / -)
 
       - name: Get branch name (pull request)
         if: github.event_name == 'pull_request'
-        shell: bash
         run: export BRANCH_NAME=$(echo ${GITHUB_HEAD_REF} | tr / -)
 
       - uses: actions/checkout@v3
