@@ -27,5 +27,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install tox tox-gh-actions
+      - name: Prints the current branch name
+        run: echo "${GITHUB_BRANCH##*/}"
+        env:
+          GITHUB_BRANCH: ${{ github.ref }}
       - name: Release
         run: tox -e release
